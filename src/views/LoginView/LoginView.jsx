@@ -39,7 +39,7 @@ export default function LoginView() {
   return (
     <div>
       <h1 className={s.title}>Welcome</h1>
-      <Form onSubmit={handleSubmit} className={s.form}>
+      <Form onSubmit={handleSubmit} className={s.form} autoComplete="off">
         <FloatingLabel
           controlId="floatingInput"
           label="Email address"

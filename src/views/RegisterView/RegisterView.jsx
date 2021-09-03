@@ -43,7 +43,7 @@ export default function RegisterView() {
   return (
     <div>
       <h1 className={s.title}>Sign Up Page</h1>
-      <Form onSubmit={handleSubmit} className={s.form}>
+      <Form onSubmit={handleSubmit} className={s.form} autoComplete="off">
         <FloatingLabel
           controlId="floatingName"
           label="Name"

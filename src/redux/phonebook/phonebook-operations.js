@@ -23,16 +23,6 @@ export const addContact = createAsyncThunk(
       return rejectWithValue(error.message);
     }
   },
-  // {
-  //   condition: (item, { getState }) => {
-  //     const { contacts } = getState();
-  //     const state = contacts.items.entities;
-  //     if (state.find(savedContact => savedContact.name === item.name)) {
-  //       alert(`${item.name} is already in contacts`);
-  //       return false;
-  //     }
-  //   },
-  // },
 );
 
 export const deleteContact = createAsyncThunk(
