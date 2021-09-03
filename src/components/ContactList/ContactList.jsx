@@ -11,6 +11,15 @@ import {
 export default function ContactList() {
   const contacts = useSelector(selectors.getFiltredContacts);
   const dispatch = useDispatch();
+  const sortedContacts = contacts.sort(function (a, b) {
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    return 0;
+  });
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -18,7 +27,7 @@ export default function ContactList() {
 
   return (
     <ul>
-      {contacts.map(({ id, name, number }) => (
+      {sortedContacts.map(({ id, name, number }) => (
         <ContactListItem
           key={id}
           name={name}
