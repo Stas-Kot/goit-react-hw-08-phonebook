@@ -12,30 +12,30 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [register.fulfilled]: (state, { payload }) => {
+    [register.fulfilled](state, { payload }) {
       state.user = payload.user;
       state.token = payload.token;
       state.isLoggedIn = true;
     },
-    [logIn.fulfilled]: (state, { payload }) => {
+    [logIn.fulfilled](state, { payload }) {
       state.user = payload.user;
       state.token = payload.token;
       state.isLoggedIn = true;
     },
-    [logOut.fulfilled]: (state, { payload }) => {
+    [logOut.fulfilled](state, { payload }) {
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
     },
-    [fetchCurrentUser.pending]: (state, { payload }) => {
+    [fetchCurrentUser.pending](state, { payload }) {
       state.isFetchinCurrentUser = true;
     },
-    [fetchCurrentUser.fulfilled]: (state, { payload }) => {
+    [fetchCurrentUser.fulfilled](state, { payload }) {
       state.user = payload;
       state.isLoggedIn = true;
       state.isFetchinCurrentUser = false;
     },
-    [fetchCurrentUser.rejected]: (state, { payload }) => {
+    [fetchCurrentUser.rejected](state, { payload }) {
       state.isFetchinCurrentUser = false;
     },
   },

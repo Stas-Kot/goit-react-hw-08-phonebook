@@ -32,6 +32,7 @@ export default function PhonebookForm() {
       return;
     }
     dispatch(addContact({ name, number }));
+    toast.success(`New contact ${name} added`);
 
     reset();
   };
